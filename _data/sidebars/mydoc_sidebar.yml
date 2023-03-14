@@ -1,0 +1,167 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Red Team Guide
+  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage.html
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage.html
+      output: pdf
+      type: frontmatter
+
+
+  - title: Nix
+    output: web, pdf
+    folderitems:
+
+    - title: nix
+      url: /nix.html
+      output: web, pdf
+
+  - title: Windows
+    output: web, pdf
+    folderitems:
+
+    - title: windows
+      url: /windows.html
+      output: web, pdf
+
+
+  - title: Network
+    output: web, pdf
+    folderitems:
+
+    - title: network
+      url: /network.html
+      output: web, pdf
+
+
+  - title: Tips and Tricks
+    output: web, pdf
+    folderitems:
+
+    - title: tips and tricks
+      url: /tips_and_tricks.html
+      output: web, pdf      
+
+
+
+  - title: Tool Syntax
+    output: web, pdf
+    folderitems:
+
+    - title: Tool Syntax
+      url: /tool_syntax.html
+      output: web, pdf
+
+
+
+  - title: Web
+    output: web, pdf
+    folderitems:
+
+    - title: web
+      url: /web.html
+      output: web, pdf
+
+
+
+  - title: Databases
+    output: web, pdf
+    folderitems:
+
+    - title: databases
+      url: /databases.html
+      output: web, pdf
+
+
+
+  - title: Programming
+    output: web, pdf
+    folderitems:
+
+    - title: programming
+      url: /programming.html
+      output: web, pdf
+
+
+
+  - title: Wireless
+    output: web, pdf
+    folderitems:
+
+    - title: wireless
+      url: /wireless.html
+      output: web, pdf
+
+
+  - title: Reverse
+    output: web, pdf
+    folderitems:
+
+    - title: reverse
+      url: /reverse.html
+      output: web, pdf
+
+
+  - title: Crypto
+    output: web, pdf
+    folderitems:
+
+    - title: crypto
+      url: /crypto.html
+      output: web, pdf
+
+
+  - title: Steg
+    output: web, pdf
+    folderitems:
+
+    - title: steg
+      url: /steg.html
+      output: web, pdf
+
+
+
+
+  - title: OSINT
+    output: web, pdf
+    folderitems:
+
+    - title: osint
+      url: /osint.html
+      output: web, pdf
+
+
+
+  - title: OT
+    output: web, pdf
+    folderitems:
+
+    - title: ot
+      url: /ot.html
+      output: web, pdf
+
+
+
+  - title: References
+    output: web, pdf
+    folderitems:
+
+    - title: references
+      url: /references.html
+      output: web, pdf
+
+ 
+
+# Copyright 2023 HADESS.IO
