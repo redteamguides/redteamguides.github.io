@@ -19,7 +19,6 @@ entries:
       output: pdf
       type: frontmatter
 
-
   - title: Nix
     output: web, pdf
     folderitems:
@@ -54,8 +53,6 @@ entries:
       url: /tips_and_tricks.html
       output: web, pdf      
 
-
-
   - title: Tool Syntax
     output: web, pdf
     folderitems:
@@ -64,8 +61,6 @@ entries:
       url: /tool_syntax.html
       output: web, pdf
 
-
-
   - title: Web
     output: web, pdf
     folderitems:
@@ -73,8 +68,6 @@ entries:
     - title: web
       url: /web.html
       output: web, pdf
-
-
 
   - title: Databases
     output: web, pdf
@@ -150,6 +143,14 @@ entries:
 
     - title: ot
       url: /ot.html
+      output: web, pdf
+
+  - title: IOT
+    output: web, pdf
+    folderitems:
+
+    - title: iot
+      url: /iot.html
       output: web, pdf
 
 
