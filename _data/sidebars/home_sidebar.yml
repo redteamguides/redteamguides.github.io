@@ -5,20 +5,17 @@ entries:
   levels: one
   folders:
 
-  - title: Products
+  - title: Navigation
     output: web
     folderitems:
+    - title: Docs
+      url: /index.html
+      output: web
     - title: News
       url: /news.html
       output: web
-    - title: Theme instructions
-      url: /mydoc_introduction.html
-      output: web
-    - title: Product 1
+    - title: Resources
       url: /p1_landing_page.html
       output: web
-    - title: Product 2
-      url: /p2_landing_page.html
-      output: web
 
-# Copyright 2021 Google LLC
+# Copyright 2023 HADESS.IO

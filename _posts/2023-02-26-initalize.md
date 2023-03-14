@@ -1,8 +1,8 @@
 ---
-title:  "Sample post"
+title:  "Initialize Post"
 published: true
 permalink: samplepost.html
-summary: "This is some summary frontmatter for my sample post."
+summary: "This is some summary frontmatter for init post."
 tags: [news, getting_started]
 ---
 

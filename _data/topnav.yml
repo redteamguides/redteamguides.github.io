@@ -4,7 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/
+      external_url: https://github.com/redteamguides/redteamguides.github.io
     - title: News
       url: /news
 
@@ -18,11 +18,7 @@ topnav_dropdowns:
           external_url: https://redteamrecipe.com
     - title: Resources
       folderitems:
-        - title: Jekyll Documentation Theme
-          url: /mydoc_introduction.html
-        - title: Product 1
+        - title: Cheatsheet
           url: /p1_landing_page.html
-        - title: Product 2
-          url: /p2_landing_page.html
 
 # Copyright 2023 HADESS.IO

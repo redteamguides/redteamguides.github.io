@@ -109,7 +109,8 @@ time.sleep(4)
 os.system("/etc/init.d/sendmail stop")
 ```
 
-### دریافت فایل از http و اجرای آن
+### Get the file from http and run it
+
 
 ```text
 #!/usr/bin/python

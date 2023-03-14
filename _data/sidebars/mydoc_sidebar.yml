@@ -153,6 +153,15 @@ entries:
       output: web, pdf
 
 
+  - title: Hardware
+    output: web, pdf
+    folderitems:
+
+    - title: hardware
+      url: /hardware.html
+      output: web, pdf
+
+
 
   - title: References
     output: web, pdf
