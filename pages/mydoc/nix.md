@@ -533,9 +533,9 @@ Check and create launcher
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
