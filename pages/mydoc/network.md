@@ -204,105 +204,30 @@ socat TCP-LISTEN:8080,reuseaddr,fork TCP6:[2001::]:80
 ```
 ## Cisco commands
 
-<table>
-   <thead>
-     <tr>
-       <th style="text-align:left"><b>Command</b>
-       </th>
-       <th style="text-align:left"><b>Description</b>
-       </th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td style="text-align:left">enable</td>
-       <td style="text-align:left">Enable privilege mode</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#configure terminal</td>
-       <td style="text-align:left">interface settings</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">(config)#interface fa0/0</td>
-       <td style="text-align:left">Configure FastEthernet 0/0</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">(config-if)#ip addr 1.1.1.1 255.255.255.0</td>
-       <td style="text-align:left">Set IP to fa0/0</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">(config)#line Vty 0 4</td>
-       <td style="text-align:left">set vty line</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">(config-line)#login</td>
-       <td style="text-align:left">
-         <p>
-         <p>Set telnet password</p>
-       </td>
-     </tr>
-     <tr>
-       <td style="text-align:left">(config-line)#password password</td>
-       <td style="text-align:left">Set password for telnet</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show session</td>
-       <td style="text-align:left">reopen session</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show version</td>
-       <td style="text-align:left">IOS version</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#dir file systems</td>
-       <td style="text-align:left">Available files</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#dir all-filesystems</td>
-       <td style="text-align:left">File Information</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#dir /all</td>
-       <td style="text-align:left">Delete files</td>
-     </tr>
-   <tr>
-       <td style="text-align:left">#show running-config</td>
-       <td style="text-align:left">settings in memory</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show startup-config</td>
-       <td style="text-align:left">Settings inside boot</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show ip interface brief</td>
-       <td style="text-align:left">List of Interfaces</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show interface e0</td>
-       <td style="text-align:left">interface information details</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show ip route</td>
-       <td style="text-align:left">List of Routes</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#show access-lists</td>
-       <td style="text-align:left">Access Lists</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#terminal length 0</td>
-       <td style="text-align:left">No limit on output</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#copy running-config startup-config</td>
-       <td style="text-align:left">Place settings from memory to boot</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">#copy running-config tftp</td>
-       <td style="text-align:left">Copy settings on tftp</td>
-     </tr>
-   </tbody>
-</table>
+| Command | Description 
+| :--- | :--- 
+| enable | Enable privilege mode 
+| #configure terminal | interface settings 
+| (config)#interface fa0/0 | Configure FastEthernet 0/0 
+| (config-if)#ip addr 1.1.1.1 255.255.255.0 | Set IP to fa0/0 
+| (config)#line Vty 0 4 | set vty line 
+| (config-line)#login | Set telnet password 
+| (config-line)#password password | Set password for telnet 
+| #show session | reopen session 
+| #show version | IOS version 
+| #dir file systems | Available files 
+| #dir all-filesystems | File Information 
+| #dir /all | Delete files 
+| #show running-config | settings in memory 
+| #show startup-config | Settings inside boot 
+| #show ip interface brief | List of Interfaces 
+| #show interface e0 | interface information details 
+| #show ip route | List of Routes 
+| #show access-lists | Access Lists 
+| #terminal length 0 | No limit on output
+| #copy running-config startup-config | Place settings from memory to boot 
+| #copy running-config tftp | Copy settings on tftp
+
 
 ### IOS 11.2-12.2 vulnerabilities
 
@@ -612,5 +537,235 @@ rtspbrute -t ip.txt -p 554
 ```text
 docker run -t ullaakut/cameradar -t 192.168.100.0/24
 ```
+
+
+## SSH
+
+connect to SSH service on the target
+
+```
+ssh <target> 
+```
+
+scan for open SSH port on the target
+
+```
+nmap -p 22 <target> - 
+```
+
+brute force SSH login
+
+```
+hydra -L users.txt -P passwords.txt ssh://<target> - 
+```
+
+## 80 (HTTP)
+
+retrieve content from the HTTP server on the target
+
+```
+curl http://<target> - 
+```
+
+scan for open HTTP port on the target
+
+```
+nmap -p 80 <target> 
+```
+
+directory enumeration on the HTTP server
+
+```
+dirb http://<target> 
+```
+
+
+## 443 (HTTPS)
+
+retrieve content from the HTTPS server on the target
+
+```
+curl https://<target> 
+```
+
+scan for open HTTPS port on the target
+
+```
+nmap -p 443 <target> 
+```
+
+perform SSL/TLS vulnerability scan on HTTPS server
+
+```
+sslscan <target>:443 
+```
+
+
+## 21 (FTP)
+
+
+connect to FTP service on the target
+
+```
+ftp <target> 
+```
+
+scan for open FTP port on the target
+
+```
+nmap -p 21 <target> 
+```
+
+brute force FTP login
+
+```
+hydra -l <username> -P passwords.txt ftp://<target> 
+```
+
+
+## 25 (SMTP)
+
+
+connect to SMTP service on the target
+
+```
+telnet <target> 25 
+```
+
+scan for open SMTP port on the target
+
+```
+nmap -p 25 <target> 
+```
+
+enumerate valid users on SMTP server
+
+```
+smtp-user-enum -M VRFY -U users.txt -t <target> 
+```
+
+
+## 53 (DNS)
+
+
+perform DNS lookup on the target
+
+```
+nslookup <target> 
+```
+
+scan for open DNS port on the target
+
+```
+nmap -p 53 <target> 
+```
+
+perform DNS enumeration on the target
+
+```
+dnsrecon -d <target> 
+```
+
+
+
+## 110 (POP3)
+
+
+connect to POP3 service on the target
+
+```
+telnet <target> 110 
+```
+
+scan for open POP3 port on the target
+
+```
+nmap -p 110 <target> 
+```
+
+brute force POP3 login
+
+```
+hydra -l <username> -P passwords.txt pop3://<target> 
+```
+
+
+## 143 (IMAP)
+
+connect to IMAP service on the target
+
+```
+telnet <target> 143 
+```
+
+scan for open IMAP port on the target
+
+```
+nmap -p 143 <target> - 
+```
+
+brute force IMAP login
+
+```
+hydra -l <username> -P passwords.txt imap://<target> - 
+```
+
+## 3306 (MySQL)
+
+
+connect to MySQL service on the target
+
+```
+mysql -h <target> -u <username> -p 
+```
+
+scan for open MySQL port on the target
+
+```
+nmap -p 3306 <target> 
+```
+
+perform SQL injection on MySQL database
+
+```
+sqlmap -u "http://<target>/index.php?id=1" --dbs 
+```
+
+
+## 3389 (RDP)
+
+
+connect to RDP service on the target
+
+
+```
+rdesktop <target> 
+```
+
+scan for open RDP port on the target
+
+```
+nmap -p 3389 <target> 
+```
+
+brute force RDP login
+
+```
+crowbar -b rdp -s <target>/32 -u users.txt -C passwords.txt 
+```
+
+## 5900 (VNC remote desktop)
+
+connect to VNC service on the target
+
+```
+vncviewer <target> 
+```
+
+```
+nmap -p 5900 <target>
+```
+
+
 
 {% include links.html %}

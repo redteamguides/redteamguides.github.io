@@ -417,6 +417,14 @@ Modbus exploit
 use exploit/windows/scada/modbus_write_registers
 ```
 
+## PCTRAN
+
+RDS server content
+
+```
+cat cpub-iexplore-QuickSessionCollection-CmsRdsh.rdp
+```
+
 
 ## resources
 

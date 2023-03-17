@@ -5,6 +5,119 @@ permalink: iot.html
 folder: mydoc
 ---
 
+## Enumeration
+
+To scan all open ports and services running on them
+
+```
+nmap -Pn -sS -sV <target IP> -p 1-65535
+```
+
+To enumerate directories and files on the web server.
+
+```
+dirb http://<target IP>:<port>/
+```
+
+To enumerate SNMP service.
+
+```
+snmpwalk -c public -v1 <target IP>
+```
+
+
+## http
+
+Use curl to send HTTP requests:
+
+```
+curl -X GET http://target.com/
+curl -X POST -d "data=example" http://target.com/
+```
+
+Use wget to download files:
+
+```
+wget http://target.com/file
+```
+
+Use Nikto for web server scanning:
+
+```
+nikto -h target.com
+```
+
+## MQTT
+
+Use Mosquitto to publish and subscribe to topics:
+
+```
+mosquitto_sub -t topic -h broker_address -p port -u username -P password
+mosquitto_pub -t topic -h broker_address -p port -m "message" -u username -P password
+```
+
+Use MQTTInspector to capture and analyze MQTT traffic:
+
+```
+https://github.com/dustinbrunton/MQTTInspector
+```
+
+## CoAP
+
+
+Use CoAPthon3 for sending CoAP requests:
+
+```
+python3 coapclient.py -m get -u coap://target.com/resource
+```
+
+Use Wireshark to capture and analyze CoAP traffic:
+
+```
+filter: coap
+```
+
+## Zigbee
+
+Use KillerBee to sniff and inject Zigbee traffic:
+
+```
+sudo python3 -m pip install pyusb
+sudo apt-get install libpcap-dev
+sudo python3 -m pip install pyserial
+sudo python3 -m pip install pycrypto
+sudo python3 -m pip install killerbee
+kb
+```
+
+
+Use Wireshark to capture and analyze Zigbee traffic:
+
+
+```
+filter: zbee
+```
+
+## Bluetooth Low Energy (BLE)
+
+Use BlueZ to scan and connect to BLE devices:
+
+```
+sudo hcitool lescan
+sudo hcitool lecc <mac_address>
+```
+
+Use GATTacker to fuzz BLE services:
+
+```
+https://github.com/securing/gattacker
+```
+
+Use Wireshark to capture and analyze BLE traffic:
+
+```
+filter: btatt
+```
 
 ## Weak Guessable, or Hardcoded Passwords
 
@@ -170,17 +283,198 @@ sudo python3 ./fat.py IoTGoat-rpi-2.img --qemu 2.5.0
 ```
 
 
+## UART Exploitation
+
+UART is often used for debugging and maintenance purposes on IoT devices, but it can also be used to gain access to the device and execute malicious code.
+
+```
+screen /dev/ttyUSB0 115200 (connect to UART interface with baud rate of 115200)
+cu -l /dev/ttyUSB0 -s 115200 (connect to UART interface with baud rate of 115200)
+```
+
+Methods: 
+
+1.Identify UART pins on the device
+2.Connect to UART using a USB-to-UART adapter
+3.Identify the baud rate and data format
+4.Access the device console and execute commands
+5.Use reverse engineering techniques to analyze firmware and identify vulnerabilities
 
 
-## resources
+## JTAG Exploitation
 
--	https://github.com/ahmedalroky/IOT-hacking-Roadmap
--	https://github.com/fkie-cad/awesome-embedded-and-iot-security
--	https://github.com/CyberSecurityUP/Awesome-Hardware-and-IoT-Hacking
--	https://github.com/nutc4k3/amazing-iot-security
--	https://github.com/ahmedalroky/IOT-hacking-Roadmap
--	https://owasp.org/www-chapter-pune/meetups/2019/August/IoT_Device_Pentest_by_Shubham_Chougule.pdf
--	https://github.com/scriptingxss/owasp-fstm
+JTAG is a hardware interface used for testing and debugging integrated circuits. It can also be used to gain access to the firmware and execute malicious code.
+
+```
+OpenOCD -f interface/<interface> -f target/<target> (start OpenOCD using interface and target configuration files)
+```
+
+Methods:
+
+1.Identify JTAG pins on the device
+2.Connect to JTAG using a JTAG adapter and OpenOCD software
+3.Identify the JTAG chain and select the target device
+4.Read and write memory, execute code, and debug firmware using gdb
+
+
+
+## SWD Exploitation:
+
+SWD is a newer, smaller and faster version of JTAG that is often used in ARM-based IoT devices. It can also be used to gain access to the firmware and execute malicious code.
+
+
+```
+OpenOCD -f interface/<interface> -c "transport select swd" -f target/<target> (start OpenOCD using interface and target configuration files)
+```
+
+Methods:
+
+1.Identify SWD pins on the device
+2.Connect to SWD using a SWD adapter and OpenOCD software
+3.Identify the SWD chain and select the target device
+4.Read and write memory, execute code, and debug firmware using gdb
+
+
+## SPI (Serial Peripheral Interface)
+
+
+1.Determine the SPI configuration (clock, polarity, phase) of the target device using a logic analyzer or oscilloscope.
+
+2.Use a bus pirate or similar tool to sniff SPI traffic between the target device and other devices on the bus.
+
+3.Use a tool like spi-tools or spidev to interact with the SPI bus and send custom commands to the target device.
+
+4.Look for unauthenticated or easily guessable commands that can be sent over the SPI bus to modify device behavior or extract sensitive information.
+
+5.Use fault injection attacks (such as glitching or power analysis) to induce errors in the target device and extract secrets.
+
+
+## I2C (Inter-Integrated Circuit)
+
+
+1.Determine the I2C address of the target device using a logic analyzer or oscilloscope.
+Use a tool like i2cdetect or i2c-tools to interact with the I2C bus and send custom commands to the target device.
+
+2.Look for unauthenticated or easily guessable commands that can be sent over the I2C bus to modify device behavior or extract sensitive information.
+
+3.Use a tool like Bus Pirate or Shikra to sniff I2C traffic between the target device and other devices on the bus.
+
+4.Use a software-defined radio (SDR) to perform electromagnetic (EM) side-channel attacks and extract secrets.
+
+
+## Medium Range Radio
+
+
+Sniffing: Use a software-defined radio (SDR) to capture and analyze radio signals. Popular tools for this include GNU Radio, URH, and Inspectrum.
+
+```
+sudo apt-get install gnuradio urh
+```
+
+Jamming: Jamming is a denial-of-service attack that sends a high-power signal to interfere with the target device's radio signal. The most common tool for jamming is the HackRF One.
+
+
+```
+sudo apt-get install hackrf
+```
+
+Replay attack: This involves capturing a valid signal and replaying it later to mimic a legitimate device.
+
+
+```
+Use GNU Radio to capture and replay the signal. Alternatively, use specialized tools like rtl_433 or Universal Radio Hacker (URH).
+```
+
+
+Packet injection: This involves injecting packets into the radio signal to execute an attack. For this, tools like KillerBee and Scapy can be used.
+
+
+```
+sudo apt-get install killerbee scapy
+```
+
+Directional antenna: A directional antenna can be used to target a specific device or area, making it easier to intercept or jam the signal.
+
+
+```
+Buy or rent a directional antenna from a reputable vendor.
+```
+
+Frequency hopping: Some IoT devices use frequency hopping to avoid interference. However, this can be exploited by capturing and analyzing the hopping patterns to predict where the device will be next.
+
+
+```
+Use tools like GQRX or Inspectrum to analyze frequency hopping patterns.
+```
+
+
+## LPWAN (Low Power Wide Area Network) 
+
+
+Sniffing and Decoding: Sniffing and decoding the LPWAN communication using software-defined radios (SDRs) and tools such as:
+
+-	Universal Radio Hacker (URH)
+-	HackRF One
+-	RTL-SDR
+
+To start sniffing with HackRF One:
+
+```
+hackrf_transfer -r filename.bin -f frequency -s sample_rate -g gain
+```
+
+
+To decode captured signals with URH:
+
+```
+urh --input-file filename.bin --modulation lora --rate [bandwidth] --frequency [frequency]
+```
+
+Replay Attacks: Record and replay the captured packets to trigger events on the IoT device or network.
+
+To transmit the recorded signals with HackRF One:
+
+```
+hackrf_transfer -t filename.bin -f frequency -s sample_rate -a 1 -x 40
+```
+
+To inject signals into the network with URH: 
+
+```
+urh --input-file filename.bin --modulation lora --rate [bandwidth] --frequency [frequency] --tx
+```
+
+Jamming Attacks: Generate noise on the LPWAN frequency to disrupt the communication between the IoT device and network.
+
+To transmit noise with HackRF One:
+
+```
+hackrf_transfer -t noise.bin -f frequency -s sample_rate -a 1 -x 40
+```
+
+
+To generate random signals with URH:
+
+```
+urh --modulation lora --rate [bandwidth] --frequency [frequency] --tx --duration [time_in_seconds] --random-data
+```
+
+Interference Attacks: Generate signals on nearby frequencies to cause interference and affect the quality of the LPWAN communication.
+
+
+To transmit signals on a nearby frequency with HackRF One: 
+
+```
+hackrf_transfer -t filename.bin -f [nearby_frequency] -s sample_rate -a 1 -x 40
+```
+
+To generate signals on multiple frequencies with URH:
+
+```
+urh --modulation lora --rate [bandwidth] --frequency-range [start_frequency] [end_frequency] --tx --duration [time_in_seconds] --random-data
+```
+
+
 
 
 

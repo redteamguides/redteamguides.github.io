@@ -3,7 +3,9 @@
 entries:
 - title: sidebar
   product: Red Team Guide
+  levels: one
   version: 1.0
+
   folders:
 
   - title:
@@ -19,159 +21,150 @@ entries:
       output: pdf
       type: frontmatter
 
-  - title: Nix
-    output: web, pdf
-    folderitems:
 
-    - title: nix
+  - title: 📖 Guides
+    output: web
+    folderitems: 
+
+
+    - title: Nix
       url: /nix.html
       output: web, pdf
 
-  - title: Windows
-    output: web, pdf
-    folderitems:
-
-    - title: windows
+    - title: Windows
       url: /windows.html
       output: web, pdf
 
-
-  - title: Network
-    output: web, pdf
-    folderitems:
-
-    - title: network
+    - title: Network
       url: /network.html
       output: web, pdf
 
 
-  - title: Tips and Tricks
-    output: web, pdf
-    folderitems:
-
-    - title: tips and tricks
+    - title: Tips and Tricks
       url: /tips_and_tricks.html
-      output: web, pdf      
+      output: web, pdf  
 
-  - title: Tool Syntax
-    output: web, pdf
-    folderitems:
 
     - title: Tool Syntax
       url: /tool_syntax.html
       output: web, pdf
 
-  - title: Web
-    output: web, pdf
-    folderitems:
-
     - title: web
       url: /web.html
       output: web, pdf
 
-  - title: Databases
-    output: web, pdf
-    folderitems:
 
-    - title: databases
+    - title: Databases
       url: /databases.html
       output: web, pdf
 
 
-
-  - title: Programming
-    output: web, pdf
-    folderitems:
-
-    - title: programming
+    - title: Programming
       url: /programming.html
       output: web, pdf
 
 
-
-  - title: Wireless
-    output: web, pdf
-    folderitems:
-
-    - title: wireless
+    - title: Wireless
       url: /wireless.html
       output: web, pdf
 
 
-  - title: Reverse
-    output: web, pdf
-    folderitems:
-
-    - title: reverse
+    - title: Reverse
       url: /reverse.html
       output: web, pdf
 
 
-  - title: Crypto
-    output: web, pdf
-    folderitems:
-
-    - title: crypto
+    - title: Crypto
       url: /crypto.html
       output: web, pdf
 
 
-  - title: Steg
-    output: web, pdf
-    folderitems:
-
-    - title: steg
+    - title: Steg
       url: /steg.html
       output: web, pdf
 
+    - title: DevOps
+      url: /devops.html
+      output: web, pdf
+
+    - title: Cloud
+      url: /cloud.html
+      output: web, pdf
 
 
+    - title: Social Engineering
+      url: /phish.html
+      output: web, pdf
 
-  - title: OSINT
-    output: web, pdf
-    folderitems:
 
-    - title: osint
+    - title: OSINT
       url: /osint.html
       output: web, pdf
 
 
-
-  - title: OT
-    output: web, pdf
-    folderitems:
-
-    - title: ot
+    - title: OT
       url: /ot.html
       output: web, pdf
 
-  - title: IOT
-    output: web, pdf
-    folderitems:
 
-    - title: iot
+    - title: IOT
       url: /iot.html
       output: web, pdf
 
 
-  - title: Hardware
-    output: web, pdf
-    folderitems:
-
-    - title: hardware
+    - title: Hardware
       url: /hardware.html
       output: web, pdf
 
 
+    - title: Physcial
+      url: /physical.html
+      output: web, pdf
 
-  - title: References
+
+
+
+  - title: 📜 Scenarios
     output: web, pdf
     folderitems:
 
-    - title: references
+    - title: Network Scenrarios
+      url: /network_scenarios.html
+      output: web, pdf
+
+    - title: Web Scenrarios
+      url: /web_scenarios.html
+      output: web, pdf
+
+    - title: Mobile Scenrarios
+      url: /mobile_scenarios.html
+      output: web, pdf
+
+    - title: Phish Scenrarios
+      url: /phish_scenarios.html
+      output: web, pdf
+
+    - title: Physical Scenrarios
+      url: /physical_scenarios.html
+      output: web, pdf
+
+    - title: OT Scenrarios
+      url: /ot_scenarios.html
+      output: web, pdf
+
+
+
+  - title: 📚 References
+    output: web, pdf
+    folderitems:
+
+    - title: References
       url: /references.html
       output: web, pdf
 
- 
+    - title: RedteamRecipe
+      url: https://redteamrecipe.com
+      output: web, pdf
 
+ 
 # Copyright 2023 HADESS.IO

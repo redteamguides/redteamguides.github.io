@@ -741,6 +741,62 @@ For example: ./pspy64 -pf -i 1000
 | **File** | **Description** |
 | :--- | :--- |
 | ~/.viminfo | vim editor file |
+
+
+# Mac
+
+## Situational Awareness
+
+| **Command** | **Explanation** |
+| :--- | :--- |
+| top | shows real-time system statistics including CPU usage, memory usage, and running processes. |
+| ps aux | displays a list of running processes with their associated details. |
+| netstat | displays active network connections, routing tables, and a number of network interface and protocol statistics. |shows all active network connections and which processes are using them.displays a list of running processes with their associated details. |
+| tcpdump | allows the capture and analysis of network traffic. |
+| tail -f /var/log/system.log | displays real-time updates to the macOS system log. |
+| log show --predicate 'process == "PROCESS_NAME"' --info | displays system log entries for a specific process. |
+| fs_usage | shows real-time file system activity, including which files are being accessed and by which processes. |
+| fseventer | displays a graphical representation of file system activity. |
+| dtrace | allows the tracing and analysis of system events. |
+| launchctl list | displays a list of all currently loaded launch daemons and agents. |
+
   
+
+
+## User Plist File Enumeration
+
+| **Command** | **Explanation** |
+| :--- | :--- |
+| `/Users/<username>/Library/Preferences/.GlobalPreferences.plist` | The user plist file for the currently logged-in user can be found in here |
+| `/Users/<username>/Library/Preferences/` | Other user plist files can be found in here |
+| `defaults read <path_to_plist_file>` | Read a plist file |
+| `defaults write <path_to_plist_file> <key> <value>` | Write a plist file |
+| `defaults delete <path_to_plist_file> <key>` | Delete a key from a plist file |
+| `PlistBuddy -c "Open <path_to_plist_file>"` | Open a plist file |
+| `PlistBuddy -c "Print <key>" <path_to_plist_file>` | Print a value from a plist file |
+| `PlistBuddy -c "Add <key> <type> <value>" <path_to_plist_file>` | Add a new key-value pair to a plist file |
+| `PlistBuddy -c "Delete <key>" <path_to_plist_file>` | Delete a key from a plist file |
+| `PlistBuddy -c "Set <key> <value>" <path_to_plist_file>` | Set the value of a key in a plist file |
+| `plutil -lint <path_to_plist_file>` | Validate a plist file |
+| `plutil -convert xml1 <path_to_plist_file>` | Convert a plist file to XML format |
+
+
+
+## User & Group
+
+
+| **Command** | **Explanation** |
+| :--- | :--- |
+| `sudo dscl . -create /Users/newusername` | create a new user |
+| `sudo dscl . -passwd /Users/newusername password` | set the user's password |
+| `sudo dscl . -append /Groups/admin GroupMembership newusername` | make the user an administrator |
+| `sudo dseditgroup -o create -r "Group Name" groupname` | create a new group |
+| `sudo dseditgroup -o edit -a username -t user groupname` | add users to the group |
+| `dscl . -read /Groups/groupname GroupMembership` | list the members of a group |
+| `sudo dseditgroup -o delete groupname` | delete a group |
+| `sudo dseditgroup -o edit -d username -t user groupname` | remove a user from a group |
+| `sudo dseditgroup -o edit -n newgroupname -r oldgroupname` | rename a group |
+
+
 
 {% include links.html %}

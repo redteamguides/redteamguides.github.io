@@ -26,6 +26,9 @@ entries:
     - title: Main Cheatsheet
       url: /p1_landing_page.html
       output: web
+    - title: Books
+      url: /p2_landing_page.html
+      output: web
 
    
 

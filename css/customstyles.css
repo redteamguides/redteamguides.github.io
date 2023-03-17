@@ -416,7 +416,7 @@ ul#mysidebar {
 }
 
 .nav ul li a {
-    border-top:1px solid whitesmoke;
+    /* border-top:1px solid whitesmoke; */
     padding-left:10px;
 }
 /* end sidebar */
@@ -921,8 +921,8 @@ span.soft {
 
 @media only screen and (min-width: 900px), only screen and (min-device-width: 900px) {
     .col-md-9 img {
-        max-width: 60px;
-        max-height: 60px;
+        max-width: 472px;
+        /*max-height: 60px;*/
     }
 }
 

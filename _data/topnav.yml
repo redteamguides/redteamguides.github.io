@@ -16,9 +16,16 @@ topnav_dropdowns:
       folderitems:
         - title: Red Team Recipe
           external_url: https://redteamrecipe.com
+          
+        - title: ATT&CK Navigator
+          external_url: https://attack.mitre.org/matrices/enterprise/
+        - title: ATT&CK+Atomic+Defend
+          external_url: https://attacknav.hadess.io/
     - title: Resources
       folderitems:
         - title: Cheatsheet
           url: /p1_landing_page.html
+        - title: Books
+          url: /p2_landing_page.html
 
 # Copyright 2023 HADESS.IO
