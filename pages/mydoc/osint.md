@@ -11,7 +11,7 @@ folder: mydoc
 
 -   web.body="hadess"&&web.body="wordpress"
 
--   domain="dotin.ir"
+-   domain="example.com"
 
 -   web.body="we hack your company successfully"&&web.title="How to Restore Your Files"
 
@@ -93,12 +93,12 @@ url:t.me cryptocurrency
 
 -   https://www.linkedin.com/posts/bob-engelen_phone-number-gaia-id-location-activity-7000395165211181056-_X9J/?utm_source=share&utm_medium=member_android
 
--   https://wigle.net/search?ssid=Dotin
+-   https://wigle.net/search?ssid=Example
 
 
 ### search engine
 
--   https://www.alltheinternet.com/?q=dotin.ir&area=&file1=&page=2#gsc.q=dotin.ir&gsc.page=2
+-   https://www.alltheinternet.com/?q=example.com&area=&file1=&page=2#gsc.q=example.com&gsc.page=2
 
 -   http://isearchfrom.com/
 
@@ -115,7 +115,7 @@ url:t.me cryptocurrency
 
 -   https://urlscan.io/result/247d32c5-8822-4da5-b3ae-1c627d642539/#summary
 
--   https://builtwith.com/relationships/dotin.ir
+-   https://builtwith.com/relationships/example.com
 
 
 ### twitter
