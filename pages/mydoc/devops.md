@@ -62,7 +62,8 @@ Dork for OSINT and Local Enumeration:
 
 ### CI/CD service authentication
 
-![](../../images/cicd-initial.drawio.png)
+<img style="background: white" src="../../images/cicd-initial.drawio.png">
+
 
 Tools for Detection:
 
@@ -119,7 +120,8 @@ Dork for OSINT and Local Enumeration:
 
 ### Organization’s public repositories
 
-![](../../images/github.drawio.png)
+<img style="background: white" src="../../images/github.drawio.png">
+
 
 Tools for Finding Organizations:
 
@@ -163,7 +165,8 @@ Example Awesome Commands per Tools:
 
 ### Endpoint compromise
 
-![](../../images/endpoint.drawio.png)
+<img style="background: white" src="../../images/endpoint.drawio.png">
+
 
 gitlab, jira cve lfi,rce,authentication bypass or malware
 
@@ -172,7 +175,8 @@ gitlab, jira cve lfi,rce,authentication bypass or malware
 ### Configured webhooks
 
 
-![](../../images/webhook.drawio.png)
+<img style="background: white" src="../../images/webhook.drawio.png">
+
 Tools for Enumerations:
 
 1. GitHound: GitHound is a reconnaissance tool that searches GitHub for sensitive information, including webhooks. It can be used to identify exposed webhooks in public repositories. You can find the tool's syntax and examples on its GitHub page.
@@ -201,7 +205,8 @@ Example Awesome Commands:
 
 ### Direct PPE (d-PPE)
 
-![](../../images/ppe.drawio.png)
+<img style="background: white" src="../../images/ppe.drawio.png">
+
 Cases where the attacker can directly modify the configuration file inside the repository. Since the pipeline is triggered by a new PR and run according to the configuration file – the attacker can inject malicious commands to the configuration file, and these commands are executed in the pipeline.
 
 Pipeline Configuration:
@@ -374,7 +379,8 @@ In this example, the injected command downloads a malicious script from a remote
 
 ### Public dependency confusion
 
-![](../../images/dependency.drawio.png)
+<img style="background: white" src="../../images/dependency.drawio.png">
+
 
 A technique where the adversary publishes public malicious packages with the same name as private packages. In this case, because package search in package-control mechanisms typically looks in public registries first, the malicious package is downloaded.
 
@@ -423,7 +429,8 @@ In this example, the attacker uses the "npm publish" command to publish the mali
 
 ### **Public package** **hijack** (“repo-jacking”)
 
-![](../../images/cicd-initial.drawio.png)
+<img style="background: white" src="../../images/cicd-initial.drawio.png">
+
 
 Hijacking a public package by taking control of the maintainer account, for example, by exploiting the GitHub user rename feature.
 
@@ -470,7 +477,8 @@ Name suggestion for typosquatting exploitation:
 ### DevOps resources compromise
 
 
-![](../../images/resource.drawio.png)
+<img style="background: white" src="../../images/resource.drawio.png">
+
 Pipelines are, at the core, a set of compute resources executing the CI/CD agents, alongside other software. An attacker can target these resources by exploiting a vulnerability in the OS, the agent’s code, other software installed in the VMs, or other devices in the network to gain access to the pipeline.
 
 
@@ -489,7 +497,9 @@ In this fictional example, the configuration file includes an agent named "my-ag
 
 ### Control of common registry
 
-![](./images/registry.drawio.png)
+
+<img style="background: white" src="../../images/registry.drawio.png">
+
 
 An attacker can gain control of a registry used by the organization, resulting in malicious images or packages executed by the pipeline VMs or production VMs.
 
@@ -499,7 +509,8 @@ Nexsus
 ### Changes in repository
 
 
-![](../../images/per-ref.drawio.png)
+<img style="background: white" src="../../images/per-ref.drawio.png">
+
 
 Adversaries can use the automatic tokens from inside the pipeline to access and push code to the repository (assuming the automatic token has enough permissions to do so).
 
@@ -530,7 +541,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Inject in Artifacts
 
-![](../../images/per-arti.drawio.png)
+<img style="background: white" src="../../images/per-arti.drawio.png">
+
 
 some CI environments have the functionality for creating artifacts to be shared between different pipeline executions. For example, in GitHub we can store artifacts and download them using a GitHub action from the pipeline configuration.
 
@@ -557,8 +569,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Modify images in registry
 
+<img style="background: white" src="../../images/per-img.drawio.png">
 
-![](../../images/per-img.drawio.png)
 In cases where the pipelines have permissions to access the image registry (for example, for writing back images to the registry after build is done) the attacker could modify and plant malicious images in the registry, which would continue to be executed by the user’s containers.
 
 
@@ -585,7 +597,8 @@ Awesome Commands per Tools with Syntax:
 ### Create service credentials
 
 
-![](../../images/per-service.drawio.png)
+<img style="background: white" src="../../images/per-service.drawio.png">
+
 A malicious adversary can leverage the access they already have on the environment and create new credentials for use in case the initial access method is lost. This could be done by creating an access token to the SCM, to the application itself, to the cloud resources, and more.
 
 
@@ -612,7 +625,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Secrets in private repositories
 
-![](../../images/priv-key.drawio.png)
+<img style="background: white" src="../../images/priv-key.drawio.png">
+
 
 Leveraging an already gained initial access method, an attacker could scan private repositories for hidden secrets. The chances of finding hidden secrets in a private repo are higher than in a public repository, as, from the developer’s point of view, this is inaccessible from outside the organization.
 
@@ -645,7 +659,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Commit/push to protected branches
 
-![](../../images/priv-pro.drawio.png)
+<img style="background: white" src="../../images/priv-pro.drawio.png">
+
 The pipeline has access to the repository that may be configured with permissive access, which could allow to push code directly to protected branches, allowing an adversary to inject code directly into the important branches without team intervention.
 
 
@@ -672,7 +687,8 @@ Awesome Commands per Tools with Syntax:
 ### Certificates and identities from metadata services
 
 
-![](../../priv-cert.drawio.png)
+<img style="background: white" src="../../priv-cert.drawio.png">
+
 Once an attacker is running on cloud-hosted pipelines, the attacker could access the metadata services from inside the pipeline and extract certificates (requires high privileges) and identities from these services.
 
 Commands for Enumeration:
@@ -699,7 +715,8 @@ Awesome Commands per Tools with Syntax:
 
 ### User Credentials
 
-![](../../images/cred-key.drawio.png)
+<img style="background: white" src="../../images/cred-key.drawio.png">
+
 
 
 In cases where the customer requires access to external services from the CI pipeline (for example, an external database), these credentials reside inside the pipeline (can be set by CI secrets, environment variables, etc.) and could be accessible to the adversary.
@@ -728,7 +745,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Service Credentials
 
-![](../../images/cred-service.drawio.png)
+<img style="background: white" src="../../images/cred-service.drawio.png">
+
 
 There are cases where the attacker can find service credentials, such as service-principal-names (SPN), shared-access-signature (SAS) tokens, and more, which could allow access to other services directly from the pipeline.
 
@@ -756,7 +774,8 @@ Awesome Commands per Tools with Syntax:
 
 ### Compromise build artifacts
 
-![](../../images/arti.drawio.png)
+<img style="background: white" src="../../images/arti.drawio.png">
+
 
 As in other supply chain attacks, once the attacker has control of the CI pipelines, they can interfere with the build artifacts. This way, malicious code could be injected into the building materials before building is done, hence injecting the malicious functionality into the build artifacts.
 
@@ -825,7 +844,8 @@ deploy:
 
 ### Registry injection
 
-![](../../images/regi.drawio.png)
+<img style="background: white" src="../../images/regi.drawio.png">
+
 
 If the pipeline is configured with a registry for the build artifacts, the attacker could infect the registry with malicious images, which later would be downloaded and executed by containers using this registry.
 
@@ -897,7 +917,8 @@ jobs:
 
 ### Spread to deployment resources
 
-![](../../images/depi.drawio.png)
+<img style="background: white" src="../../images/depi.drawio.png">
+
 
 If the pipeline is configured with access to deployment resources, then the attacker has the same access to these resources, allowing the attacker to spread. This could result in code execution, data exfiltration and more, depending on the permissions granted to the pipelines.
 
@@ -967,7 +988,8 @@ deploy:
 
 ### Service logs manipulation
 
-![](../../images/monitoring.drawio.png)
+<img style="background: white" src="../../images/monitoring.drawio.png">
+
 
 - Enumeration:
     
@@ -1021,7 +1043,8 @@ In the provided example pipeline, the misconfigured "cleanup" stage includes a c
 
 ### Compilation manipulation
 
-![](../../images/change.drawio.png)
+<img style="background: white" src="../../images/change.drawio.png">
+
 1. Changing the code on the fly – Changing the code right before the build process begins, without changing it in the repository and leaving traces in it.
 
 Example Pipeline with Misconfiguration:
@@ -1095,7 +1118,8 @@ In the provided example pipeline, the misconfigured "prepare" stage includes a c
 
 ### Reconfigure branch protections
 
-![](../../images/unprotected.drawio.png)
+<img style="background: white" src="../../images/unprotected.drawio.png">
+
 
 
 Branch protection tools allow an organization to configure steps before a PR/commit is approved into a branch. Once an attacker has admin permissions, they may change these configurations and introduce code into the branch without any user intervention.
@@ -1138,26 +1162,29 @@ gitlab protect unprotect --project PROJECT_ID BRANCH
 
 ### DDoS
 
-![](../../images/dos.drawio.png)
+<img style="background: white" src="../../images/dos.drawio.png">
+
 
 An adversary could use the compute resources they gained access to in order to execute distributed denial of services (DDoS) attacks on external targets.
 
 ### Cryptocurrency mining
 
-![](../../images/crypto.drawio.png)
+<img style="background: white" src="../../images/crypto.drawio.png">
+
 
 The compute resources could be used for crypto mining controlled by an adversary.
 
 ### Local DoS
 
+<img style="background: white" src="../../images/localdos.drawio.png">
 
-![](../../images/localdos.drawio.png)
 
 Once the attacker is running on the CI pipelines, the attacker can perform a denial service attack from  said pipelines to customers by shutting down agents, rebooting, or by overloading the VMs.
 
 ### Resource deletion
 
-![](../../images/res-del.drawio.png)
+<img style="background: white" src="../../images/res-del.drawio.png">
+
 
 An attacker with access to resources (cloud resources, repositories, etc.) could permanently delete the resources to achieve denial of services.
 
@@ -1168,7 +1195,8 @@ An attacker with access to resources (cloud resources, repositories, etc.) could
 
 ### Clone private repositories
 
-![](../../images/ex-pro.drawio.png)
+<img style="background: white" src="../../images/ex-pro.drawio.png">
+
 
 Once attackers have access to CI pipelines, they also gain access to the private repositories (for example, the GITHUB_TOKEN can be used in GitHub), and therefore could clone and access the code, thus gaining access to private IP.
 
@@ -1190,7 +1218,8 @@ In this example, we're assuming you're using the `GITHUB_TOKEN` secret provided 
 
 ### Pipeline logs
 
-![](../../images/ex-pip.drawio.png)
+<img style="background: white" src="../../images/ex-pip.drawio.png">
+
 
 An adversary could access the pipeline execution logs, view the access history, the build steps, etc. These logs may contain sensitive information about the build, the deployment, and in some cases even credentials to services, to user accounts and more.
 
@@ -1244,7 +1273,8 @@ Additionally, we have added `success` and `failure` sections to handle actions b
 
 ### Exfiltrate data from production resources
 
-![](../../images/ex-res.drawio.png)
+<img style="background: white" src="../../images/ex-res.drawio.png">
+
  In cases where the pipelines can access the production resources, the attackers will have access to these resources as well. Therefore, they can abuse this access for exfiltrating production data.
 
 
