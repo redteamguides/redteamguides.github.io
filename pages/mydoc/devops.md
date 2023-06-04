@@ -14,7 +14,7 @@ Here are a few commands and methods for privilege escalation and lateral movemen
 
 SCM authentication refers to the process of authenticating and accessing an organization’s source code management (SCM) system. It typically involves using authentication methods such as personal access tokens (PATs), SSH keys, or other allowed credentials. However, attackers may attempt to exploit this authentication process, gaining unauthorized access to the SCM by employing techniques like phishing attacks. This can pose a significant threat to the organization’s source code and sensitive information. To mitigate this risk, it’s crucial to be aware of potential attacks and implement robust security measures.
 
-![](../../images/scm.png)
+<img style="background-color: white" src="../../images/scm.png">
 
 
 Commands:
