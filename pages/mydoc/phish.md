@@ -182,6 +182,7 @@ Micro expression
 • Deliberate suppression of an emotion
 • Unconscious suppression of an emotion
 
+Above Images and Explanation By Paul Ekman in Emotions Revealed
 
 
 ## Pretexting
