@@ -13,6 +13,67 @@ Social engineering is a powerful tool that can be used to manipulate individuals
 
 ![](../../images/en-sa-er.png)
 
+![](../../images/an-di-er.png)
+
+
+![](../../images/neu.png)
+
+
+![](../../images/neu2.png)
+
+
+![](../../images/neu3.png)
+
+
+![](../../images/neu4.png)
+
+
+![](../../images/neu5.png)
+
+![](../../images/neu6.png)
+
+![](../../images/neu7.png)
+
+![](../../images/neu8.png)
+
+![](../../images/glare.png)
+
+![](../../images/RESTRAINED-ANGER.png)
+
+![](../../images/neu9.png)
+
+![](../../images/neu10.png)
+![](../../images/neu11.png)
+
+![](../../images/neu12.png)
+![](../../images/neu13.png)
+![](../../images/neu14.png)
+![](../../images/neu15.png)
+![](../../images/neu16.png)
+![](../../images/neu17.png)
+![](../../images/neu18.png)
+![](../../images/neu19.png)
+![](../../images/neu20.png)
+![](../../images/neu21.png)
+![](../../images/neu22.png)
+![](../../images/neu23.png)
+![](../../images/neu24.png)
+![](../../images/neu25.png)
+![](../../images/neu26.png)
+![](../../images/neu27.png)
+![](../../images/neu28.png)
+![](../../images/neu29.png)
+![](../../images/neu30.png)
+![](../../images/neu31.png)
+
+
+
+
+
+
+
+
+
 ## Pretexting
 
 This is when an attacker creates a fictional scenario to gain someone's trust and convince them to divulge sensitive information. For example, an attacker might pose as a bank employee and ask for a customer's account information.
