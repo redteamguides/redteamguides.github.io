@@ -9,6 +9,10 @@ folder: mydoc
 
 Social engineering is a powerful tool that can be used to manipulate individuals and organizations. 
 
+## Emotion
+
+![](../../images/en-sa-er.png)
+
 ## Pretexting
 
 This is when an attacker creates a fictional scenario to gain someone's trust and convince them to divulge sensitive information. For example, an attacker might pose as a bank employee and ask for a customer's account information.
