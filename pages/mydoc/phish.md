@@ -66,11 +66,121 @@ Social engineering is a powerful tool that can be used to manipulate individuals
 ![](../../images/neu30.png)
 ![](../../images/neu31.png)
 
+---
+
+![](../../images/photo1.png)
+
+Slight sadness. If you thought of any related word, such as "blue" or "dejected" or
+"depressed," that would also be correct. The expression is shown in the drooping
+upper eyelids. Tired or sleepy could also be correct, not because it is a related word
+but because the drooping eyelids she shows can occur in tiredness as well as sadness; when the upper eyelids begin to droop in tiredness, you might, however, see
+the eyes lose their focus, and an occasional yawn or shaking of the head.
 
 
+![](../../images/photo2.png)
+
+Disgust. Again, a related word would be acceptable, but not one in the anger family, such as annoyed or irritated. The clue is in the slight contraction of the muscle that wrinkles the nose and narrows the eyes.
+
+![](../../images/photo3.png)
+
+Slight sadness, again, this time expressed in the lips with the slight pulling down
+of the lip corners. Compare the position of the lips in this picture with the position in photo 1, in which the lips are relaxed.
+
+![](../../images/photo4.png)
+
+Slight enjoyment; any word in that set of words—pleased, OK, feels good-—
+would be correct. Compare the lips in this picture with the relaxed lips in photo 1.
 
 
+![](../../images/photo5.png)
 
+Highly controlled or very slight anger (annoyance)—or determination. You
+can't be certain when the only clue is a slight pressing and narrowing of the lips.
+You don't want to miss this clue, even though it is ambiguous, because if you
+spotted it in real life, you probably would be able to figure out whether it is an
+anger sign or determination based on when it was shown or what was being said
+by you or that person. This can be one of the earliest signs of anger, alerting
+you before matters get irreversible; sometimes this sign occurs before the other
+person recognizes that he or she is becoming angry.
+
+
+![](../../images/photo6.png)
+
+Slight or highly controlled fear. The most common mistake is to interpret this as a
+sign of disgust. The clue to fear is the slightly stretched lips. Sometimes when a
+person is describing or thinking about a time when he or she was afraid, but not
+actually feeling it in the moment, the person will show this subtle fear expression.
+
+
+![](../../images/photo7.png)
+
+Disgust again, this time shown not in the eyes or nose but in the slightly raised
+upper lip. Disdain could also describe this expression
+
+
+![](../../images/photo8.png)
+
+Upset, unhappy, miserable, perplexed . . . These are all possibilities, all of which
+refer to the anger theme of having an obstacle in the path of a goal. It might even
+be highly controlled anger. The lowered brows and tensed lower eyelids signal
+anger.
+
+![](../../images/photo9.png)
+
+A masked expression of anger. The person looks happy because of her smiling
+lips, but the eyebrows don't fit an enjoyable emotion. This could either be an
+attempt to mask anger (the emotion shown in the eyebrows) with a happy smile, a
+blend of anger and enjoyment, or amusement about being perplexed or confounded. The eyebrows in this picture are the same as those shown in photo 8, but
+the movement is a little stronger.
+
+
+![](../../images/photo10.png)
+
+Fear or surprise—or just rapt attention. It's hard to be certain when the clue is
+limited to just the raised upper eyelids. If it is fear or surprise, it would be either
+slightly felt or highly controlled stronger feelings. 
+
+
+![](../../images/photo11.png)
+
+Controlled anger, very slight annoyance just beginning, or having trouble focusing on something (literally or figuratively). When the clue is the tensed eyelids,
+the context could help in identifying the correct understanding of the person's
+emotion. 
+
+
+![](../../images/photo12.png)
+
+Worry, apprehension, or controlled fear. This configuration in the eyebrows is one
+of the most reliable signs of these feelings. 
+
+![](../../images/photo13.png)
+
+Controlled anger or annoyance. The clue is the jaw, which is moved forward. The
+lower eyelids are also slightly tensed.
+
+
+![](../../images/photo14.png)
+
+
+Contempt, smug, or disdainful. The tightening of one lip corner signals this set of
+related emotions.
+
+Slight expression:
+• Beginning of an emotion
+• Weak emotion
+• Diminished emotion
+• Failed attempt to conceal an emotion
+
+
+Partial expression
+• Weak emotion
+• Diminished emotion
+• Failed attempt to conceal an emotion
+
+
+Micro expression
+• Deliberate suppression of an emotion
+• Unconscious suppression of an emotion
 
 
 
