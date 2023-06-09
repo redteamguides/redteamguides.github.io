@@ -166,21 +166,21 @@ Contempt, smug, or disdainful. The tightening of one lip corner signals this set
 related emotions.
 
 Slight expression:
-• Beginning of an emotion
-• Weak emotion
-• Diminished emotion
-• Failed attempt to conceal an emotion
+* Beginning of an emotion
+* Weak emotion
+* Diminished emotion
+* Failed attempt to conceal an emotion
 
 
-Partial expression
-• Weak emotion
-• Diminished emotion
-• Failed attempt to conceal an emotion
+Partial expression:
+* Weak emotion
+* Diminished emotion
+* Failed attempt to conceal an emotion
 
 
-Micro expression
-• Deliberate suppression of an emotion
-• Unconscious suppression of an emotion
+Micro expression:
+* Deliberate suppression of an emotion
+* Unconscious suppression of an emotion
 
 Above Images and Explanation By Paul Ekman in Emotions Revealed
 
