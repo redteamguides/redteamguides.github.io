@@ -62,6 +62,12 @@ kubeletctl get /version --node <NODE_NAME> --kubelet-version <KUBELET_VERSION>
 kubeletctl logs <POD_NAME> --node <NODE_NAME>
 ```
 
+## Scan Kubernetes Cluster
+
+```
+./hayat.sh --only-k8s
+```
+
 
 
 
