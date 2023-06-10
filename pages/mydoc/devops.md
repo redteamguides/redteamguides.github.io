@@ -7,7 +7,62 @@ folder: mydoc
 
 # DevOps
 
-Here are a few commands and methods for privilege escalation and lateral movement:
+## Scanning public unauthinticated kubernetes clusters and run commands inside containers
+
+```
+python kubolt.py --query "asn:123123 org:'ACME Corporation'"
+```
+
+## Docker Enumeration, Escalation of Privileges and Container Escapes
+
+```
+https://github.com/stealthcopter/deepce
+./deepce.sh 
+```
+
+## Scan a Specific Kubernetes Cluster
+
+```
+kube-hunter --remote <KUBECONFIG_FILE>
+```
+
+## Scan All Clusters Defined in Kubeconfig
+
+```
+kube-hunter --all
+```
+
+## Generate a Report in JSON Format
+
+```
+kube-hunter --remote <KUBECONFIG_FILE> --report json
+```
+
+## Scan a Specific Node
+
+```
+kube-hunter --node <NODE_NAME> --remote <KUBECONFIG_FILE>
+```
+
+## Scan a Local Cluster
+
+```
+kube-hunter --pod
+```
+
+## Retrieve Kubelet Version Information
+
+```
+kubeletctl get /version --node <NODE_NAME> --kubelet-version <KUBELET_VERSION>
+```
+
+## Get Node Logs
+
+```
+kubeletctl logs <POD_NAME> --node <NODE_NAME>
+```
+
+
 
 
 ### SCM AUTHENTICATION
