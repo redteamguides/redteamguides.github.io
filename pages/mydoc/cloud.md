@@ -96,6 +96,12 @@ Identify privilege escalation paths and dangerous permissions in the cloud/saas 
 python3 main.py -e -p google,github,k8s --github-only-org --k8s-get-secret-values --gcp-get-secret-values # Enumerate google, github and k8s
 ```
 
+Scan for buckets using the keyword "test" while completely unauthenticated
+
+```
+python3 gcpbucketbrute.py -k test -u
+```
+
 
 ## AWS
 
