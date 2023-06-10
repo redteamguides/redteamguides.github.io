@@ -19,6 +19,10 @@ folder: mydoc
 - https://www.microsoft.com/en-us/security/blog/2020/04/02/attack-matrix-kubernetes/
 
 
+## Cloud
+
+- https://github.com/Hacking-the-Cloud/hackingthe.cloud/
+- https://github.com/six2dez/pentest-book/tree/master/enumeration/cloud
 
 
 ## IOT
