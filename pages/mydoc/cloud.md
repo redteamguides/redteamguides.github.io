@@ -90,6 +90,11 @@ Enumerate Cloud Providers from a List of Domains in a File
 python cloud_enum.py --file domains.txt
 ```
 
+Identify privilege escalation paths and dangerous permissions in the cloud/saas configurations
+
+```
+python3 main.py -e -p google,github,k8s --github-only-org --k8s-get-secret-values --gcp-get-secret-values # Enumerate google, github and k8s
+```
 
 
 ## AWS
