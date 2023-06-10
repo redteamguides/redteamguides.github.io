@@ -96,12 +96,26 @@ Identify privilege escalation paths and dangerous permissions in the cloud/saas 
 python3 main.py -e -p google,github,k8s --github-only-org --k8s-get-secret-values --gcp-get-secret-values # Enumerate google, github and k8s
 ```
 
-Scan for buckets using the keyword "test" while completely unauthenticated
+
+BloodHound in Cloud
 
 ```
-python3 gcpbucketbrute.py -k test -u
+install.bat C:\project\BloodHound
 ```
 
+Graphing Azure Active Directory objects
+
+```
+python3 ./sscollector.py
+```
+
+
+
+To run DigitalOcean Audit  
+
+```
+python cs.py -env digitalocean
+```
 
 ## AWS
 
@@ -123,6 +137,13 @@ Create a new S3 bucket:
 aws s3 mb s3://my-bucket-name
 ```
 
+
+To run AWS Audit
+
+```
+python cs.py -env aws
+```
+
 ## Google Cloud SDK
 
 List all instances in a project:
@@ -141,6 +162,19 @@ Create a new Cloud Storage bucket:
 
 ```
 gsutil mb -p my-project-id gs://my-bucket-name
+```
+
+
+Scan for buckets using the keyword "test" while completely unauthenticated
+
+```
+python3 gcpbucketbrute.py -k test -u
+```
+
+To run GCP Audit 
+
+```
+python cs.py -env gcp -pId <project_name>
 ```
 
 ## Microsoft Azure CLI 
@@ -166,6 +200,27 @@ Create a new storage account:
 az storage account create --name mystorageaccount --resource-group myresourcegroup --location eastus --sku Standard_LRS
 ```
 
+
+
+AzureStealth Scan
+
+```
+(1) Import-Module .\SkyArk.ps1 -force
+(2) Start-AzureStealth
+```
+
+AWStealth Scan
+
+```
+(1) Import-Module .\SkyArk.ps1 -force
+(2) Start-AWStealth
+```
+
+To run Azure Audit 
+
+```
+python cs.py -env azure
+```
 
 ## S3 bucket misconfigurations
 
