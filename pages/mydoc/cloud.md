@@ -46,6 +46,51 @@ Cloud Provider Enumration
 python3 cloudenum.py -u example.com
 ```
 
+Scan a Single Domain(Search for potential frontable domains)
+
+```
+python3 findfrontabledomains.py -d example.com
+```
+
+Scan a List of Domains from a File(Search for potential frontable domains)
+
+```
+python3 findfrontabledomains.py -f domains.txt
+```
+
+Domain Fronting
+
+```
+python cdn-search.py -d DOMAIN
+python validate-domains.py
+```
+
+Scrape a Single Website
+
+```
+python3 cloudscraper.py --url https://www.example.com
+```
+
+Scrape a Website with Proxy Support:
+
+```
+python3 cloudscraper.py --url https://www.example.com --proxy http://proxy.example.com:8080
+```
+
+
+Enumerate Cloud Providers for a Specific Domain
+
+```
+python cloud_enum.py --domain example.com
+```
+
+Enumerate Cloud Providers from a List of Domains in a File
+
+```
+python cloud_enum.py --file domains.txt
+```
+
+
 
 ## AWS
 
