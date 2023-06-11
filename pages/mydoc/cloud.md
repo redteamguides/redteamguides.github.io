@@ -109,15 +109,119 @@ Graphing Azure Active Directory objects
 python3 ./sscollector.py
 ```
 
-
-
 To run DigitalOcean Audit  
 
 ```
 python cs.py -env digitalocean
 ```
 
+Attempts to find public S3 buckets from permutations of the certificates domain name
+
+
+https://github.com/eth0izzle/bucket-stream
+python bucket-stream.py
+‍‍‍
+
+or
+
+```
+https://github.com/nahamsec/lazys3
+ruby lazys3.rb <COMPANY> 
+```
+  
+Scan and Generate Graph Database(Consolidates infrastructure assets and the relationships):
+
+```
+cartography --connect aws --inventory-only --neo4j-uri bolt://localhost:7687 --neo4j-username <USERNAME> --neo4j-password <PASSWORD>
+```
+  
+Export Data to JSON Format(Consolidates infrastructure assets and the relationships):
+
+```
+cartography --export-file cartography.json
+```
+  
+Run a Custom Plugin(Consolidates infrastructure assets and the relationships):
+
+```
+cartography --connect aws --custom-plugin my_custom_plugin.py
+```
+ 
+Discovering open S3 Buckets
+  
+```
+festin mydomain.com
+```
+
+
+
 ## AWS
+
+Enumerate EC2 Instances:
+
+```
+python3 weirdAAL.py -m enumeration.enum_ec2
+```
+
+or PACU
+
+```
+run enumeration/ec2_instances
+```
+
+Enumerate S3 Buckets:
+
+```
+python3 weirdAAL.py -m enumeration.enum_s3
+```
+
+or PACU
+
+```
+run enumeration/s3_buckets
+```
+
+Enumerate IAM Users:
+
+```
+python3 weirdAAL.py -m enumeration.enum_iam_users
+```
+
+or PACU
+
+```
+run enumeration/iam_users
+```
+
+Enumerate RDS Instances:
+
+```
+python3 weirdAAL.py -m enumeration.enum_rds
+```
+
+or PACU
+
+```
+run enumeration/rds_instances
+```
+
+Scan for Open Elasticsearch Instances:
+
+```
+python3 weirdAAL.py -m enumeration.enum_elasticsearch
+```
+
+or PACU
+
+```
+run enumeration/elasticsearch_instances
+```
+
+Checks the permissions of the bucket
+
+```
+php s3-buckets-bruteforcer.php --bucket gwen001-test002
+```
 
 List all instances in a region:
 
