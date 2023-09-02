@@ -9,6 +9,8 @@ folder: mydoc
 
 ## References 
 
+Book Cover By: Dominik Mayer
+
 
 ## Threat Matrix
 
