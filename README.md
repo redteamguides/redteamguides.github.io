@@ -12,10 +12,3 @@ The platform is community-driven, and users can contribute to it by submitting t
 
 Overall, RedTeamGuides is an excellent resource for anyone interested in learning about red teaming and penetration testing, whether they are beginners or experienced professionals.
 
-
-
-Brought to you by:
-
-<img src="https://github.com/devsecopsguides/devsecopsguides.github.io/raw/main/assets/images/hadess-logo_dark.png" alt="HADESS" width="200"/>
-
-[HADESS](https://hadess.io) performs offensive cybersecurity services through infrastructures and software that include vulnerability analysis, scenario attack planning, and implementation of custom integrated preventive projects. We organized our activities around the prevention of corporate, industrial, and laboratory cyber threats.
